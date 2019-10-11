@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nrwl-assignment'`, () => {
+  it(`should have as title 'ticket-store-example'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('nrwl-assignment');
+    expect(app.title).toEqual('ticket-store-example');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nrwl-assignment app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ticket-store-example app is running!');
   });
 });

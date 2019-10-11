@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nrwl-assignment": {
+    "ticket-store-example": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nrwl-assignment",
+            "outputPath": "dist/ticket-store-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nrwl-assignment:build"
+            "browserTarget": "ticket-store-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nrwl-assignment:build:production"
+              "browserTarget": "ticket-store-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nrwl-assignment:build"
+            "browserTarget": "ticket-store-example:build"
           }
         },
         "test": {
@@ -117,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "nrwl-assignment:serve"
+            "devServerTarget": "ticket-store-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "nrwl-assignment:serve:production"
+              "devServerTarget": "ticket-store-example:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "nrwl-assignment"
+  "defaultProject": "ticket-store-example"
 }
