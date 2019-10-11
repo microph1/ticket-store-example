@@ -1,5 +1,15 @@
 <mat-progress-bar mode="indeterminate" *ngIf="loadingTickets"></mat-progress-bar>
 
-<pre>
-  {{tickets$ | async | json}}
-</pre>
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <div fxLayout="column" fxLayoutGap="66px">
+
+    <mat-card *ngFor="let ticket of (tickets$ | async)">
+      <mat-card-content>
+        <pre>{{ticket | json}}</pre>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+
