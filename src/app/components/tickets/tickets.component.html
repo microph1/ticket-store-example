@@ -1,3 +1,5 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loadingTickets"></mat-progress-bar>
+
 <pre>
   {{tickets$ | async | json}}
 </pre>
