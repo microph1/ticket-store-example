@@ -50,7 +50,8 @@ export class TicketService {
   }
 
   user(id: number) {
-    return of(this.findUserById(id)).pipe(delay(randomDelay()));
+    const user = this.findUserById(id);
+    return user ? of(user).pipe(delay(randomDelay())) : throwError('User not found');
   }
 
   newTicket(payload: { description: string }) {

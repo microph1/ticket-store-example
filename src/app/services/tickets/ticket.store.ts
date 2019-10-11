@@ -2,8 +2,9 @@ import { Effect, Reduce, BaseStore, Store } from '@microphi/store';
 import { Injectable } from '@angular/core';
 import { Ticket, TicketsState, TicketWithState } from './ticket.interface';
 import { bufferCount, catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
-import { from, NEVER } from 'rxjs';
+import { from, NEVER, of, throwError } from 'rxjs';
 import { TicketService } from './ticket.service';
+import { tick } from '@angular/core/testing';
 
 
 export enum TicketActions {
@@ -50,7 +51,12 @@ export class TicketStore extends BaseStore<TicketsState> {
           catchError(err => {
             console.error(err);
             // silently fail
-            return NEVER;
+            ticket.assignee = {
+              name: `unable to find user with id ${ticket.assigneeId}`,
+              id: ticket.assigneeId
+            };
+
+            return of(ticket);
           })
         );
       }),
